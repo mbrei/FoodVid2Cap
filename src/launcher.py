@@ -213,10 +213,10 @@ if args.moe:
     topic_embedding = tfidf.get_w_tfidf_via_names(tfidf_weight_matrix)
     decoder.add_topic_embedding(topic_embedding, non_trainable=True)
 
-    if use_cuda:
-        np.save('tfidf_weight_matrix_correct', topic_embedding.to('cpu').data.numpy())
-    else:
-        np.save('tfidf_weight_matrix_correct', topic_embedding.data.numpy())
+    if use_cuda: 
+        np.save(tfidf_weight_matrix_path_processed,topic_embedding.to('cpu').data.numpy())
+    else: 
+        np.save(tfidf_weight_matrix_path_processed,topic_embedding.data.numpy())
 
     # once the tfidf_weight_matrix_correct is created and saved to the data directory, the above code does not have to
     # be executed again. It is then sufficient to execute the following line of code

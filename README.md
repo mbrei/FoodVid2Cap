@@ -90,7 +90,7 @@ Arguments for the launcher that can be set for the training process: <br />
 `--print_every` specifies the frequency of printing the training and validaiton results and saving the model <br/>
 `--learning_rate` specifies the learning rate for the Adam optimizer<br/>
 `--batch_size` specifies the batch size for each iteration<br/>
-`--teaching_forcing_ratio` During training, the teacher forcing ratio can be between 0 and 1. At inference time it has to be set to 0<br/>
+`--teaching_forcing_ratio` During training, the teacher forcing ratio can be between 0 and 1 <br />
 `--limit` specifies the length of the generated output sequence. If set to zero the length equals to the maximum length of the annotations in the training dataset<br/>
 `--num_train` specifies the number of samples in training <br/>
 `--num_val` specifies the number of samples in validation <br/>
@@ -110,9 +110,7 @@ training for a specific training process that can be indicated with the correspo
 The captioning capabilities of the model are evaluated on an unseen test dataset which is compromised by 
 7 recipe types that were never seen during the training process. The assessment of the model's captioning capability is
 recorded by several standard metrics that are commonly used in the field of natural 
-language generation. These include the BLEU (1-4) metric <sup>2</sup>
-the METEOR <sup>3</sup> and ROUGE-L score <sup>4 </sup>and 
-the CIDEr metric<sup>5</sup>.
+language generation. These include the METEOR <sup>2</sup> and ROUGE-L score <sup>3</sup>. With [pycocoeval](https://github.com/tylin/coco-caption) further evaluation scores can be caculated.
  
 ##### 3.1 Generate captions for the test data `Generate_captions_test.ipynb` 
 Notebook that produces the captions for the unseen test set. In the notebook one can specify the path to the model that 
@@ -126,21 +124,12 @@ zero-shot video captioning." Proceedings of the AAAI Conference on Artificial
 Intelligence. Vol. 33. 2019.* <br />
 Available from: https://wvvw.aaai.org/ojs/index.php/AAAI/article/view/4926/4799
 
-<sup>2</sup> *Papineni, Kishore, et al. "BLEU: a method for automatic evaluation of
- machine translation." Proceedings of the 40th annual meeting on association for
-  computational linguistics. Association for Computational Linguistics, 2002.* <br />
-  Available from: https://www.aclweb.org/anthology/P02-1040
-
-<sup>3</sup> *Banerjee, Satanjeev, and Alon Lavie. "METEOR: An automatic metric for MT
+<sup>2</sup> *Banerjee, Satanjeev, and Alon Lavie. "METEOR: An automatic metric for MT
  evaluation with improved correlation with human judgments." Proceedings of the acl 
  workshop on intrinsic and extrinsic evaluation measures for machine translation 
  and/or summarization. 2005.* <br/> Available from: https://www.aclweb.org/anthology/W05-0909
  
- <sup>4</sup> *Lin, Chin-Yew. "Rouge: A package for automatic evaluation of summaries."
+ <sup>3</sup> *Lin, Chin-Yew. "Rouge: A package for automatic evaluation of summaries."
   Text summarization branches out. 2004.* <br /> 
   Available from: https://www.aclweb.org/anthology/W04-1013
  
- <sup>5</sup> *Vedantam, Ramakrishna, C. Lawrence Zitnick, and Devi Parikh. 
- "Cider: Consensus-based image description evaluation." Proceedings of the IEEE 
- conference on computer vision and pattern recognition. 2015.* <br />
- Available from: https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Vedantam_CIDEr_Consensus-Based_Image_2015_CVPR_paper.pdf
